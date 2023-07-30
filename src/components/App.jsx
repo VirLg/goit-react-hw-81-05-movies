@@ -1,4 +1,6 @@
+import{useState} from react;
 export const App = () => {
+  const [first, setfirst] = useState(second)
   return (
     <div
       style={{
