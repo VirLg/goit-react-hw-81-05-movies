@@ -1,13 +1,14 @@
 import Header from 'components/Header/Header';
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-const HomePage = () => {
+const Layout = () => {
   return (
     <div>
       <Header />
-      <h2>Home</h2>
+      <Outlet />
     </div>
   );
 };
 
-export default HomePage;
+export default Layout;
