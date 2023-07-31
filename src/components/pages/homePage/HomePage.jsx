@@ -6,26 +6,16 @@ const HomePage = () => {
 
   useEffect(() => {
     handleApi();
-
   }, []);
   const handleApi = async () => {
-
     const arr = await Api();
     setArrMovies(arr.data.results);
-        console.log(arrMovies);
   };
-
-  
   return (
-    <ul
-    style={
-      {listStyle:'none',}
-      }
-    >
-      <HomePageItem prop={arrMovies}/>
+    <ul style={{ listStyle: 'none' }}>
+      <HomePageItem prop={arrMovies} />
     </ul>
-  )
-  
+  );
 };
 
 export default HomePage;
