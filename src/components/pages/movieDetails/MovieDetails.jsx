@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ApiDeteils } from 'api/Api';
+import MovieDetailsItem from './MovieDetailsItem';
 const MovieDetails = () => {
   const [item, setItem] = useState(null);
   const id = useParams();
@@ -10,14 +11,10 @@ const MovieDetails = () => {
       setItem(itemDetails.data);
     };
     handleApiDetails();
+    // console.log('item', item.poster_path);
   }, [id]);
 
-  return (
-    <div key={item.id}>
-      <img src={item.poster_path} alt={item.title} />
-      <h2>{item.title}</h2>
-    </div>
-  );
+  return item && <MovieDetailsItem prop={item} />;
 };
 
 export default MovieDetails;
