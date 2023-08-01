@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Api from 'api/Api';
-import HomePageItem from './homePageItem/HomePageItem';
+import HomePageItem from './HomePageItem';
 const HomePage = () => {
   const [arrMovies, setArrMovies] = useState([]);
 
