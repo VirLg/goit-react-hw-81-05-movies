@@ -19,23 +19,10 @@ export const ApiDeteils = function ({ movieId }) {
   return data;
 };
 
-// export const ApiDeteils = function (id) {
-//   const options = {
-//     method: 'GET',
-//     url: `https://api.themoviedb.org/3/movie/${id}`,
-//     headers: {
-//       accept: 'application/json',
-//       Authorization: 'Bearer d0d7894e72847cf4bdccbd92204adc61',
-//     },
-//   };
-
-//   const data = axios
-//     .request(options)
-//     .then(function (response) {
-//       console.log(response);
-//     })
-//     .catch(function (error) {
-//       console.error(error);
-//     });
-//   return data;
-// };
+export const ApiKeySearch = value => {
+  const data = axios(
+    `https://api.themoviedb.org/3/search/${value}?api_key=c36fe88d7e0d6b58145a986005d5f8b7`
+  );
+  if (!data) return new Error('some');
+  return data;
+};
