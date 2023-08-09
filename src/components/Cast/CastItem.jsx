@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CastItem = ({ name, profile_path }) => {
-  console.log('name', profile_path);
   return (
     <li>
       <div>

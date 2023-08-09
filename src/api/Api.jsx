@@ -11,7 +11,6 @@ const Api = function () {
 export default Api;
 
 export const ApiDeteils = function ({ movieId }) {
-  console.log(movieId);
   const data = axios(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=c36fe88d7e0d6b58145a986005d5f8b7`
   );
@@ -29,6 +28,15 @@ export const ApiKeySearch = value => {
 export const ApiCastSearch = ({ movieId }) => {
   const data = axios(
     `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=c36fe88d7e0d6b58145a986005d5f8b7`
+  );
+
+  if (!data) return new Error('some');
+  return data;
+};
+export const ApiReviews = ({ movieId }) => {
+  console.log(movieId);
+  const data = axios(
+    `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=c36fe88d7e0d6b58145a986005d5f8b7`
   );
 
   if (!data) return new Error('some');
