@@ -12,9 +12,9 @@ const HomePage = () => {
     setArrMovies(arr.data.results);
   };
   return (
-    <ul style={{ listStyle: 'none' }}>
+    <>
       <HomePageItem prop={arrMovies} />
-    </ul>
+    </>
   );
 };
 

@@ -6,7 +6,11 @@ const Layout = () => {
   return (
     <div>
       <Header />
-      <Outlet />
+      <main>
+        <ul style={{ listStyle: 'none' }}>
+          <Outlet />
+        </ul>
+      </main>
     </div>
   );
 };

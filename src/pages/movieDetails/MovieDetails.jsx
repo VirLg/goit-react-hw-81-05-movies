@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
 import { ApiDeteils } from 'api/Api';
 import MovieDetailsItem from './MovieDetailsItem';
 const MovieDetails = () => {
@@ -14,7 +14,21 @@ const MovieDetails = () => {
     // console.log('item', item.poster_path);
   }, [id]);
 
-  return item && <MovieDetailsItem prop={item} />;
+  return (
+    <>
+      {item && <MovieDetailsItem prop={item} />}
+
+      <ul>
+        <li>
+          <Link to="cast">Cast</Link>
+        </li>
+        <li>
+          <Link to="reviews">Reviews</Link>
+        </li>
+      </ul>
+      <Outlet />
+    </>
+  );
 };
 
 export default MovieDetails;
