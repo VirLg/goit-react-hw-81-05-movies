@@ -42,3 +42,13 @@ export const ApiReviews = ({ movieId }) => {
   if (!data) return new Error('some');
   return data;
 };
+
+export const ApiSearch = value => {
+  console.log(value);
+  const data = axios(
+    `https://api.themoviedb.org/3/${value}/movie?api_key=c36fe88d7e0d6b58145a986005d5f8b7`
+  );
+
+  if (!data) return new Error('some');
+  return data;
+};

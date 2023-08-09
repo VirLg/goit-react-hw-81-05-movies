@@ -13,11 +13,17 @@ const Cast = () => {
     hadleApiCast();
   }, [movieId]);
   useEffect(() => {
-    castCallback();
+    let isCancelled = false;
+    if (!isCancelled) castCallback();
+    return () => (isCancelled = true);
   }, [castCallback]);
 
   return (
-    <ul>
+    <ul
+      style={{
+        listStyle: 'none',
+      }}
+    >
       {cast &&
         cast.map(({ name, profile_path }) => {
           return (

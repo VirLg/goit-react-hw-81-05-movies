@@ -14,13 +14,15 @@ const MovieDetails = () => {
     handleApiDetails();
   }, [id]);
   useEffect(() => {
-    details();
-  }, [details, id]);
+    let isCancelled = false;
+    if (!isCancelled) details();
+    return () => (isCancelled = true);
+  }, [details]);
   return (
     <>
       {item && <MovieDetailsItem prop={item} />}
 
-      <ul>
+      <ul style={{ listStyle: 'none' }}>
         <li>
           <Link to="cast">Cast</Link>
         </li>

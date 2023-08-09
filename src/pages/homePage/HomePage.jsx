@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Api from 'api/Api';
 import HomePageItem from './HomePageItem';
+import { Container } from 'components/container/Container.styled';
 const HomePage = () => {
   const [arrMovies, setArrMovies] = useState([]);
 
   useEffect(() => {
-    handleApi();
+    let isCancelled = false;
+    if (!isCancelled) handleApi();
+    return () => (isCancelled = true);
   }, []);
   const handleApi = async () => {
     const arr = await Api();

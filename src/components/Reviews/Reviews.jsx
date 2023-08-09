@@ -9,16 +9,28 @@ const Reviews = () => {
   const rewiewCallback = useCallback(() => {
     const handleReview = async () => {
       const data = await ApiReviews(movieId);
-      console.log('data', data);
-      setReview(data);
+      console.log('data', data.data.results);
+      setReview(data.data.results);
     };
     handleReview();
   }, [movieId]);
   useEffect(() => {
-    rewiewCallback();
+    let isCancelled = false;
+    if (!isCancelled) rewiewCallback();
+    return () => (isCancelled = true);
   }, [rewiewCallback]);
-
-  return <div>Reviews</div>;
+  console.log('review', review);
+  return (
+    review &&
+    review.map(({ content, author, id }) => {
+      return (
+        <div key={id}>
+          <h2>{author}</h2>
+          <h2 style={{ fontSize: '10px' }}>{content}</h2>
+        </div>
+      );
+    })
+  );
 };
 
 export default Reviews;

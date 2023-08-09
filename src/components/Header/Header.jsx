@@ -1,25 +1,26 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { Container } from 'components/container/Container.styled';
 const Header = () => {
   return (
-    <div
-
-    style={{
-      display:'flex',
-      gap:'16px',
-height:"40px",
-outline:'1px solid teal',
-padding:"20px",
-    }}
-    >
-      <div>
-        <NavLink to="/">HomePage</NavLink>
-      </div>
-      <div>
-        <NavLink to="/movies">MoviesPage</NavLink>
-      </div>
-    </div>
+    <Container style={{ backgroundColor: 'aqua' }}>
+      <nav>
+        <ul
+          style={{
+            display: 'flex',
+            gap: '16px',
+            listStyle: 'none',
+          }}
+        >
+          <li>
+            <NavLink to="/">HomePage</NavLink>
+          </li>
+          <li>
+            <NavLink to="/movies">MoviesPage</NavLink>
+          </li>
+        </ul>
+      </nav>
+    </Container>
   );
 };
 
