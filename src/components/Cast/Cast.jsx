@@ -13,12 +13,12 @@ const Cast = () => {
     };
     hadleApiCast();
   }, [movieId]);
-
+  console.log('cast', cast);
   return (
     <ul>
       {cast &&
-        cast.map(({ name }) => {
-          return <CastItem name={name} />;
+        cast.map(({ name, profile_path }) => {
+          return <CastItem name={name} profile_path={profile_path} />;
         })}
     </ul>
   );

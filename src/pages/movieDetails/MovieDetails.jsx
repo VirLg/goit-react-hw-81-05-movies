@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useParams, Link, Outlet } from 'react-router-dom';
 import { ApiDeteils } from 'api/Api';
 import MovieDetailsItem from './MovieDetailsItem';
 const MovieDetails = () => {
   const [item, setItem] = useState(null);
   const id = useParams();
-  useEffect(() => {
+
+  const details = useCallback(() => {
     const handleApiDetails = async () => {
       const itemDetails = await ApiDeteils(id);
       setItem(itemDetails.data);
     };
     handleApiDetails();
-    // console.log('item', item.poster_path);
   }, [id]);
-
+  useEffect(() => {
+    details();
+  }, [details, id]);
   return (
     <>
       {item && <MovieDetailsItem prop={item} />}
