@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const MoviesSearchForm = ({ prop }) => {
   const [inputValue, setInputValue] = useState('');
   const handleSearchForm = e => {
     setInputValue(e.target.value);
   };
-
+  const [query, setQuery] = useSearchParams();
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('prop', prop);
-    prop(inputValue);
+    setQuery({ query: inputValue });
   };
   return (
     <form onSubmit={handleSubmit}>

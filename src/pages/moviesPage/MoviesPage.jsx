@@ -2,28 +2,34 @@ import React, { useEffect, useState } from 'react';
 import MoviesSearchForm from './MoviesSearchForm';
 import { ApiKeySearch } from 'api/Api';
 import MoviePageItem from './MoviePageItem';
+import { useSearchParams } from 'react-router-dom';
+import MovieDetails from 'pages/movieDetails/MovieDetails';
 
 const MoviesPage = () => {
-  const [search, setSearch] = useState('');
+  // const [search, setSearch] = useState('');
   const [keyArr, setKeyArr] = useState('');
 
-  const handleSearch = value => {
-    setSearch(value);
-  };
-
+  // const handleSearch = value => {
+  //   setSearch(value);
+  // };
+  const [searchParams] = useSearchParams();
+  const search = searchParams.get('query');
   useEffect(() => {
     const keySearch = async () => {
-      await ApiKeySearch(search);
+      if (search) {
+        const arr = await ApiKeySearch(search);
+        setKeyArr(arr.data.results);
+      }
     };
-    const arr = keySearch();
-    setKeyArr(arr);
+    keySearch();
   }, [search]);
 
   return (
     <>
-      <MoviesSearchForm prop={handleSearch} />
+      <MoviesSearchForm />
       <MoviePageItem prop={keyArr} />
-      {search && <>{search}</>}
+
+      {/* {keyArr && <>{keyArr}</>} */}
     </>
   );
 };

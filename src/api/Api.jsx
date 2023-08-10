@@ -19,7 +19,7 @@ export const ApiDeteils = function ({ movieId }) {
 };
 
 export const ApiKeySearch = value => {
-  // console.log('value', value);
+  console.log('value', value);
   const data = axios(
     `https://api.themoviedb.org/3/search/movie?query=${value}&api_key=c36fe88d7e0d6b58145a986005d5f8b7`
   );
