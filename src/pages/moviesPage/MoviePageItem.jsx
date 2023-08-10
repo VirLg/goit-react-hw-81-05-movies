@@ -1,7 +1,7 @@
 import React from 'react';
 
-const MoviePageItem = prop => {
-  console.log('prop', prop);
+const MoviePageItem = ({ prop }) => {
+  // console.log('prop', prop);
   return <div>MoviePageItem</div>;
 };
 

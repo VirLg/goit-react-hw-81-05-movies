@@ -20,6 +20,7 @@ const MovieDetails = () => {
   }, [details]);
   return (
     <>
+      <button type="button">Go to back link</button>
       {item && <MovieDetailsItem prop={item} />}
 
       <ul style={{ listStyle: 'none' }}>
