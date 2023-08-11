@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Api from 'api/Api';
 import CastItem from './CastItem';
-import Barbara from '../../pages/Barbara.jpeg';
 const Cast = () => {
   const [cast, setCast] = useState('');
   const { movieId } = useParams();
