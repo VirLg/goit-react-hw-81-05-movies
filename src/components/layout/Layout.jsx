@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Header from 'components/Header/Header';
 import { Container } from 'components/container/Container.styled';
 import React from 'react';
@@ -10,7 +11,9 @@ const Layout = () => {
       <Container>
         <main>
           <ul style={{ listStyle: 'none', display: 'block' }}>
-            <Outlet />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Outlet />
+            </Suspense>
           </ul>
         </main>
       </Container>

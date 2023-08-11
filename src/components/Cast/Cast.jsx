@@ -27,7 +27,7 @@ const Cast = () => {
       }}
     >
       {cast &&
-        cast.map(({ name, profile_path = Barbara }) => {
+        cast.map(({ name, profile_path }) => {
           return (
             <div key={name}>
               <CastItem name={name} profile_path={profile_path} />
