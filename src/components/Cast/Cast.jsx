@@ -6,7 +6,7 @@ import Barbara from '../../pages/Barbara.jpeg';
 const Cast = () => {
   const [cast, setCast] = useState('');
   const { movieId } = useParams();
-  console.log('moviedId', movieId);
+
   const castCallback = useCallback(() => {
     const hadleApiCast = async () => {
       const castApi = await Api(`/movie/${movieId}/credits?`);

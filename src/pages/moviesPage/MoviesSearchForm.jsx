@@ -7,10 +7,14 @@ const MoviesSearchForm = ({ prop }) => {
     setInputValue(e.target.value);
   };
   const [query, setQuery] = useSearchParams();
+
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('query', inputValue);
-    if (!inputValue) Notify.failure('Sorry, the search is not valid.');
+
+    if (!inputValue) {
+      Notify.failure('Sorry, the search is not valid.');
+      console.log('query', query);
+    }
     setQuery({ query: inputValue });
   };
   return (

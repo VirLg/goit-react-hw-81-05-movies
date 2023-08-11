@@ -9,7 +9,7 @@ const Reviews = () => {
   const rewiewCallback = useCallback(() => {
     const handleReview = async () => {
       const data = await Api(`/movie/${movieId}/reviews?`);
-      console.log('data', data.data.results);
+
       setReview(data.data.results);
     };
     handleReview();
@@ -19,7 +19,7 @@ const Reviews = () => {
     if (!isCancelled) rewiewCallback();
     return () => (isCancelled = true);
   }, [rewiewCallback]);
-  console.log('review', review);
+
   return (
     review &&
     review.map(({ content, author, id }) => {
