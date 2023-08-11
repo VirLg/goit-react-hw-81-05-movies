@@ -1,5 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import {
+  useParams,
+  Link,
+  Outlet,
+  useNavigate,
+  useLocation,
+} from 'react-router-dom';
 import { ApiDeteils } from 'api/Api';
 import MovieDetailsItem from './MovieDetailsItem';
 const MovieDetails = () => {
@@ -18,9 +24,16 @@ const MovieDetails = () => {
     if (!isCancelled) details();
     return () => (isCancelled = true);
   }, [details]);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(location.state);
+  };
   return (
     <>
-      <button type="button">Go to back link</button>
+      <button type="button" onClick={handleClick}>
+        Go to back link
+      </button>
       {item && <MovieDetailsItem prop={item} />}
 
       <ul style={{ listStyle: 'none' }}>

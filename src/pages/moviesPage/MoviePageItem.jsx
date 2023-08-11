@@ -1,14 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const MoviePageItem = ({ prop }) => {
-  console.log('prop', prop);
+  const location = useLocation();
   return (
     <ul>
       {prop &&
         prop.map(({ original_title, id }) => (
-          <li>
-            <Link to={`${id}`}>{original_title}</Link>
+          <li key={id}>
+            <Link to={`${id}`} state={location}>
+              {original_title}
+            </Link>
           </li>
         ))}
     </ul>
