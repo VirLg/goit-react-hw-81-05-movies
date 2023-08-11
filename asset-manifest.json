@@ -1,14 +1,26 @@
 {
   "files": {
     "main.css": "/goit-react-hw-81-05-movies/static/css/main.c0cb7348.css",
-    "main.js": "/goit-react-hw-81-05-movies/static/js/main.d2856387.js",
+    "main.js": "/goit-react-hw-81-05-movies/static/js/main.1fb9764a.js",
+    "static/js/951.93cbecce.chunk.js": "/goit-react-hw-81-05-movies/static/js/951.93cbecce.chunk.js",
+    "static/js/412.045d9073.chunk.js": "/goit-react-hw-81-05-movies/static/js/412.045d9073.chunk.js",
+    "static/js/656.548119ef.chunk.js": "/goit-react-hw-81-05-movies/static/js/656.548119ef.chunk.js",
+    "static/js/87.69d71876.chunk.js": "/goit-react-hw-81-05-movies/static/js/87.69d71876.chunk.js",
+    "static/js/186.c3eb3c59.chunk.js": "/goit-react-hw-81-05-movies/static/js/186.c3eb3c59.chunk.js",
+    "static/js/279.c5a41aa7.chunk.js": "/goit-react-hw-81-05-movies/static/js/279.c5a41aa7.chunk.js",
     "static/media/Barbara.jpeg": "/goit-react-hw-81-05-movies/static/media/Barbara.1ca79ca01091136ab3cf.jpeg",
     "index.html": "/goit-react-hw-81-05-movies/index.html",
     "main.c0cb7348.css.map": "/goit-react-hw-81-05-movies/static/css/main.c0cb7348.css.map",
-    "main.d2856387.js.map": "/goit-react-hw-81-05-movies/static/js/main.d2856387.js.map"
+    "main.1fb9764a.js.map": "/goit-react-hw-81-05-movies/static/js/main.1fb9764a.js.map",
+    "951.93cbecce.chunk.js.map": "/goit-react-hw-81-05-movies/static/js/951.93cbecce.chunk.js.map",
+    "412.045d9073.chunk.js.map": "/goit-react-hw-81-05-movies/static/js/412.045d9073.chunk.js.map",
+    "656.548119ef.chunk.js.map": "/goit-react-hw-81-05-movies/static/js/656.548119ef.chunk.js.map",
+    "87.69d71876.chunk.js.map": "/goit-react-hw-81-05-movies/static/js/87.69d71876.chunk.js.map",
+    "186.c3eb3c59.chunk.js.map": "/goit-react-hw-81-05-movies/static/js/186.c3eb3c59.chunk.js.map",
+    "279.c5a41aa7.chunk.js.map": "/goit-react-hw-81-05-movies/static/js/279.c5a41aa7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c0cb7348.css",
-    "static/js/main.d2856387.js"
+    "static/js/main.1fb9764a.js"
   ]
 }
