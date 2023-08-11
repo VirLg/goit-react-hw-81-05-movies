@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Api from 'api/Api';
 import HomePageItem from './HomePageItem';
-import { Container } from 'components/container/Container.styled';
 const HomePage = () => {
   const [arrMovies, setArrMovies] = useState([]);
 
