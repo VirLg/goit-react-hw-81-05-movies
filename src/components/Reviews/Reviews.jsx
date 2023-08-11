@@ -1,14 +1,14 @@
-import { ApiReviews } from 'api/Api';
+import Api from 'api/Api';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Reviews = () => {
-  const movieId = useParams();
+  const { movieId } = useParams();
   const [review, setReview] = useState();
 
   const rewiewCallback = useCallback(() => {
     const handleReview = async () => {
-      const data = await ApiReviews(movieId);
+      const data = await Api(`/movie/${movieId}/reviews?`);
       console.log('data', data.data.results);
       setReview(data.data.results);
     };

@@ -1,6 +1,6 @@
 import React from 'react';
-import Barbara from '../../Barbara.jpeg';
-const CastItem = ({ name, profile_path }) => {
+import Barbara from '../../pages/Barbara.jpeg';
+const CastItem = ({ name, profile_path = Barbara }) => {
   return (
     <li
       style={{
@@ -13,7 +13,7 @@ const CastItem = ({ name, profile_path }) => {
         }}
       >
         <img
-          src={`https://image.tmdb.org/t/p/w500/${profile_path}` ?? { Barbara }}
+          src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
           alt={name}
           width={'50px'}
         />

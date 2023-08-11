@@ -17,3 +17,15 @@ code {
 active {
   color: red;
 }
+a:focus,
+a:hover {
+  color: red;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: b;
+}

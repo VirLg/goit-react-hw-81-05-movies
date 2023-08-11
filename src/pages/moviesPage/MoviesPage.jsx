@@ -1,9 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import MoviesSearchForm from './MoviesSearchForm';
-import { ApiKeySearch } from 'api/Api';
+import Api from 'api/Api';
 import MoviePageItem from './MoviePageItem';
-import { useParams, useSearchParams } from 'react-router-dom';
-import MovieDetails from 'pages/movieDetails/MovieDetails';
+import { useSearchParams } from 'react-router-dom';
 
 const MoviesPage = () => {
   // const [search, setSearch] = useState('');
@@ -14,12 +13,11 @@ const MoviesPage = () => {
   // };
   const [searchParams] = useSearchParams();
   const search = useMemo(() => searchParams.get('query'), [searchParams]);
-  const resetPage = useParams();
-  console.log('resetPage', searchParams);
+
   useEffect(() => {
     const keySearch = async () => {
       if (search) {
-        const arr = await ApiKeySearch(search);
+        const arr = await Api(`/search/movie?query=${search}&`);
         setKeyArr(arr.data.results);
       }
     };

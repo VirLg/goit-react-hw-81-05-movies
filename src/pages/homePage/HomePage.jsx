@@ -11,7 +11,7 @@ const HomePage = () => {
     return () => (isCancelled = true);
   }, []);
   const handleApi = async () => {
-    const arr = await Api();
+    const arr = await Api(`/trending/movie/day?`);
     setArrMovies(arr.data.results);
   };
   return (

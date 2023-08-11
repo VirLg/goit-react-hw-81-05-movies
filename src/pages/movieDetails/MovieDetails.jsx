@@ -6,19 +6,19 @@ import {
   useNavigate,
   useLocation,
 } from 'react-router-dom';
-import { ApiDeteils } from 'api/Api';
+import Api from 'api/Api';
 import MovieDetailsItem from './MovieDetailsItem';
 const MovieDetails = () => {
   const [item, setItem] = useState(null);
-  const id = useParams();
+  const { movieId } = useParams();
 
   const details = useCallback(() => {
     const handleApiDetails = async () => {
-      const itemDetails = await ApiDeteils(id);
+      const itemDetails = await Api(`/movie/${movieId}?`);
       setItem(itemDetails.data);
     };
     handleApiDetails();
-  }, [id]);
+  }, [movieId]);
   useEffect(() => {
     let isCancelled = false;
     if (!isCancelled) details();
